@@ -668,6 +668,8 @@ case2. [ 다중화 master cluser 구성](/README.md##case-2-다중-contorl-plain
     * kubeadm join command를 저장해놓지 못한 경우, master node에서 아래 명령어를 통해 token 재생성이 가능하다.
 	```bash
 	kubeadm token create --print-join-command
+	#kubeadm token create
+	kubeadm token list
 	```	
     
 ## 삭제 가이드
