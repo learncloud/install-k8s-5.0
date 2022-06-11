@@ -691,8 +691,8 @@ case2. [ 다중화 master cluser 구성](/README.md##case-2-다중-contorl-plain
       ```bash
       
       kubeadm reset --cri-socket=/var/run/crio/crio.sock
-	rm -rf /etc/cni/net.d
-	rm -rf /root/.kube
+      rm -rf /etc/cni/net.d
+      rm -rf /root/.kube
 
       sudo yum remove -y kubeadm-1.19.4-0 kubelet-1.19.4-0 kubectl-1.19.4-0
       
