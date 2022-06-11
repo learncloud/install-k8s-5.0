@@ -514,6 +514,7 @@ case2. [ 다중화 master cluser 구성](/README.md##case-2-다중-contorl-plain
 
       
 ### Case 2. 다중 contorl plain 구성 (Master 2개 이상)
+- ex. master1개 / backup서버가 2개이상이면 당연히 ip는 backup ip는 1개의 서버에만 보입니다 (서버를 죽이면 backup받습니다)
 * 목적 : `kubernetes master를 구축한다.`
 * 순서 : 
     * Keepalived 설치
