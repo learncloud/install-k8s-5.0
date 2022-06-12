@@ -284,7 +284,7 @@ case2. [ 다중화 master cluser 구성](/README.md##case-2-다중-contorl-plain
 	
 
 
-### Case 2. docker-ce 설치 및 설정 (Master/Worker 공통)
+### Case 2. docker-ce 설치 및 설정 (main Master)
 * 목적 : `k8s container docker runtime 설치`
 * 생성 순서 :
     * docker 설치 유무확인
