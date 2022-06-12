@@ -287,6 +287,7 @@ case2. [ 다중화 master cluser 구성](/README.md##case-2-다중-contorl-plain
 ### Case 2. docker-ce 설치 및 설정 (Master/Worker 공통)
 * 목적 : `k8s container docker runtime 설치`
 * 생성 순서 :
+    * docerk 설치 유무확인
     * docker-ce를 설치한다.
     * (폐쇄망) 아래 주소를 참조하여 패키지 레포를 등록 후 docker-ce를 설치한다. `(image registry 구축 시에 docker를 이미 설치하였고 daemon.json 내용이 같다면 아래 과정은 생략한다.)`
       * https://github.com/learncloud/build-local-repo-prolinux8.2
