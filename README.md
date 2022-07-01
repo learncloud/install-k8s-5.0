@@ -169,31 +169,31 @@ case2. [ 다중화 master cluser 구성](/README.md##case-2-다중-contorl-plain
 	sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 	```
 
-	* (cri-o) 사용 전 환경 설정
+	* (cri-o) 사용 전 환경 설정 (해당부분 띄어쓰기가 제대로 안되서 EOF가 잘 안끝남 메모장 복붙 추천)
 	```bash
-sudo modprobe overlay
-sudo modprobe br_netfilter
+	sudo modprobe overlay
+	sudo modprobe br_netfilter
+
+	sudo cat << "EOF" | sudo tee -a /etc/sysctl.d/99-kubernetes-cri.conf
+	net.bridge.bridge-nf-call-iptables  = 1
+	net.ipv4.ip_forward                 = 1
+	net.bridge.bridge-nf-call-ip6tables = 1
+	EOF
 	
-sudo cat << "EOF" | sudo tee -a /etc/sysctl.d/99-kubernetes-cri.conf
-net.bridge.bridge-nf-call-iptables  = 1
-net.ipv4.ip_forward                 = 1
-net.bridge.bridge-nf-call-ip6tables = 1
-EOF
-	
-sudo sysctl --system
+	sudo sysctl --system
 
 	```
 
 
-	* (docker) 사용 전 환경 설정
+	* (docker) 사용 전 환경 설정 (해당부분 띄어쓰기가 제대로 안되서 EOF가 잘 안끝남 메모장 복붙 추천)
 	```bash
-sudo cat << "EOF" | sudo tee -a /etc/sysctl.d/k8s.conf
-net.bridge.bridge-nf-call-iptables  = 1
-net.ipv4.ip_forward                 = 1
-net.bridge.bridge-nf-call-ip6tables = 1
-EOF
-	
-sudo sysctl --system
+	sudo cat << "EOF" | sudo tee -a /etc/sysctl.d/k8s.conf
+	net.bridge.bridge-nf-call-iptables  = 1
+	net.ipv4.ip_forward                 = 1
+	net.bridge.bridge-nf-call-ip6tables = 1
+	EOF
+
+	sudo sysctl --system
 
 	```
 
